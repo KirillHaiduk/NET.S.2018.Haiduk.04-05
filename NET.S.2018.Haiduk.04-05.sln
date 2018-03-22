@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27428.2002
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Day4-5Tasks2-4", "NET.S.2018.Haiduk.04-05\Day4-5Tasks2-4.csproj", "{270A5385-2B1A-4D11-BC6A-5691C393E97E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Day4-5Tasks2-4.NUnitTests", "Day4-5Tasks2-4.NUnitTests\Day4-5Tasks2-4.NUnitTests.csproj", "{959BC3F3-6036-4C45-A89D-A5E8D4918FEF}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{270A5385-2B1A-4D11-BC6A-5691C393E97E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{270A5385-2B1A-4D11-BC6A-5691C393E97E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{270A5385-2B1A-4D11-BC6A-5691C393E97E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{270A5385-2B1A-4D11-BC6A-5691C393E97E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{959BC3F3-6036-4C45-A89D-A5E8D4918FEF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{959BC3F3-6036-4C45-A89D-A5E8D4918FEF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{959BC3F3-6036-4C45-A89D-A5E8D4918FEF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{959BC3F3-6036-4C45-A89D-A5E8D4918FEF}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {6F3D0447-1C89-44DF-A010-32959CA9768B}
+	EndGlobalSection
+EndGlobal
