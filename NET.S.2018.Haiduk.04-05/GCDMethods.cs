@@ -91,7 +91,7 @@ namespace NET.S._2018.Haiduk._04_05
         }
 
         /// <summary>
-        /// Method that calculates GCD for 2 numbers using Stein algorythm (Euclid binary algorythm)
+        /// Method that calculates GCD for 3 numbers using Stein algorythm (Euclid binary algorythm)
         /// </summary>
         /// <param name="a">1st number</param>
         /// <param name="b">2nd number</param>
