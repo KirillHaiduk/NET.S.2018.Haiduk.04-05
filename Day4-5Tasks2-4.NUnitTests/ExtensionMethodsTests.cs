@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using NUnit.Framework;
 
 namespace NET.S._2018.Haiduk._04_05
@@ -11,21 +11,38 @@ namespace NET.S._2018.Haiduk._04_05
         [TestCase(10, 20, 40, 50, 100, ExpectedResult = 10)]
         [TestCase(27, 0, 54, ExpectedResult = 27)]
         [TestCase(150, 450, 900, ExpectedResult = 150)]
-        public int EuclidGCDTest(params int[] array) => GCDMethods.EuclidGCD(array);
+        public int EuclidGCDTest(params int[] array)
+        {
+            GCDMethods.GCDDelegate gcdDelegate = GCDMethods.FindEuclidGDC;
+            return GCDMethods.FindGCD(gcdDelegate, array);
+        }
 
         [TestCase(null)]
         [TestCase(new int[0])]
-        public void EuclidGCDTest_AcceptsEmptyArray_ThrowsException(params int[] array) => Assert.Throws<ArgumentNullException>(() => GCDMethods.EuclidGCD(array));
+        public void EuclidGCDTest_AcceptsEmptyArray_ThrowsException(params int[] array)
+        {
+            GCDMethods.GCDDelegate gcdDelegate = GCDMethods.FindEuclidGDC;
+            Assert.Throws<ArgumentNullException>(() => GCDMethods.FindGCD(gcdDelegate, array));
+        }
 
         [TestCase(-55, 11, 110, ExpectedResult = 11)]
         [TestCase(10, 20, 40, 50, 100, ExpectedResult = 10)]
         [TestCase(0, 27, 81, ExpectedResult = 27)]
         [TestCase(150, 450, 900, ExpectedResult = 150)]
-        public int SteinGCDTest(params int[] array) => GCDMethods.SteinGCD(array);
+        public int SteinGCDTest(params int[] array)
+        {
+            GCDMethods.GCDDelegate gcdDelegate = GCDMethods.FindSteinGCD;
+            return GCDMethods.FindGCD(gcdDelegate, array);
+        }
 
         [TestCase(null)]
         [TestCase(new int[0])]
-        public void SteinGCDTest_AcceptsEmptyArray_ThrowsException(params int[] array) => Assert.Throws<ArgumentNullException>(() => GCDMethods.SteinGCD(array));
+        public void SteinGCDTest_AcceptsEmptyArray_ThrowsException(params int[] array)
+        {
+            GCDMethods.GCDDelegate gcdDelegate = GCDMethods.FindSteinGCD;
+            Assert.Throws<ArgumentNullException>(() => GCDMethods.FindGCD(gcdDelegate, array));
+        }
+
         #endregion
 
         #region Binary Converter Tests
