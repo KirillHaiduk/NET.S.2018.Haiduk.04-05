@@ -2,16 +2,8 @@ using System;
 
 namespace NET.S._2018.Haiduk._04_05
 {
-    public class GCDMethods
-    {
-        /// <summary>
-        /// Delegate for choosing suitable method for calculating GCD of 2 given numbers
-        /// </summary>
-        /// <param name="a">1st number</param>
-        /// <param name="b">2nd number</param>
-        /// <returns>GCD of given numbers calculated by Euclid or Stein algorythm</returns>
-        public delegate int GCDDelegate(int a, int b);
-
+    public static class GCDMethods
+    {        
         #region Public methods
         /// <summary>
         /// Method that calculates GCD for 2 numbers using type of accepted delegate
@@ -20,7 +12,7 @@ namespace NET.S._2018.Haiduk._04_05
         /// <param name="a">1st number</param>
         /// <param name="b">2nd number</param>
         /// <returns>GCD of given numbers</returns>
-        public static int FindGCD(GCDDelegate gcdDelegate, int a, int b)
+        public static int FindGCD(Func<int, int, int> gcdDelegate, int a, int b)
         {
             if (a == 0)
             {
@@ -42,7 +34,7 @@ namespace NET.S._2018.Haiduk._04_05
         /// <param name="b">2nd number</param>
         /// <param name="c">3rd number</param>
         /// <returns>GCD of given numbers</returns>
-        public static int FindGCD(GCDDelegate gcdDelegate, int a, int b, int c)
+        public static int FindGCD(Func<int, int, int> gcdDelegate, int a, int b, int c)
         {
             int[] array = { a, b, c };
             int gcd = array[0];
@@ -60,7 +52,7 @@ namespace NET.S._2018.Haiduk._04_05
         /// <param name="gcdDelegate">Delegate type for calculating GCD</param>
         /// <param name="array">Array of 2, 3 or more numbers</param>
         /// <returns>GCD of given numbers</returns>
-        public static int FindGCD(GCDDelegate gcdDelegate, params int[] array)
+        public static int FindGCD(Func<int, int, int> gcdDelegate, params int[] array)
         {
             if (array.Length == 0 || array is null)
             {
@@ -87,7 +79,7 @@ namespace NET.S._2018.Haiduk._04_05
         /// <param name="a">1st give number</param>
         /// <param name="b">2nd given number</param>
         /// <returns>GCD of 2 numbers</returns>
-        public static int FindEuclidGDC(int a, int b)
+        public static int FindEuclidGCD(int a, int b)
         {
             while (b != 0)
             {
