@@ -1,5 +1,6 @@
 using System;
 using NUnit.Framework;
+using static NET.S._2018.Haiduk._04_05.GCDMethods;
 
 namespace NET.S._2018.Haiduk._04_05
 {
@@ -13,16 +14,16 @@ namespace NET.S._2018.Haiduk._04_05
         [TestCase(150, 450, 900, ExpectedResult = 150)]
         public int EuclidGCDTest(params int[] array)
         {
-            GCDMethods.GCDDelegate gcdDelegate = GCDMethods.FindEuclidGDC;
-            return GCDMethods.FindGCD(gcdDelegate, array);
+            Func<int, int, int> gcdDelegate = FindEuclidGCD;
+            return FindGCD(gcdDelegate, array);
         }
 
         [TestCase(null)]
         [TestCase(new int[0])]
         public void EuclidGCDTest_AcceptsEmptyArray_ThrowsException(params int[] array)
         {
-            GCDMethods.GCDDelegate gcdDelegate = GCDMethods.FindEuclidGDC;
-            Assert.Throws<ArgumentNullException>(() => GCDMethods.FindGCD(gcdDelegate, array));
+            Func<int, int, int> gcdDelegate = FindEuclidGCD;
+            Assert.Throws<ArgumentNullException>(() => FindGCD(gcdDelegate, array));
         }
 
         [TestCase(-55, 11, 110, ExpectedResult = 11)]
@@ -31,16 +32,16 @@ namespace NET.S._2018.Haiduk._04_05
         [TestCase(150, 450, 900, ExpectedResult = 150)]
         public int SteinGCDTest(params int[] array)
         {
-            GCDMethods.GCDDelegate gcdDelegate = GCDMethods.FindSteinGCD;
-            return GCDMethods.FindGCD(gcdDelegate, array);
+            Func<int, int, int> gcdDelegate = FindSteinGCD;
+            return FindGCD(gcdDelegate, array);
         }
 
         [TestCase(null)]
         [TestCase(new int[0])]
         public void SteinGCDTest_AcceptsEmptyArray_ThrowsException(params int[] array)
         {
-            GCDMethods.GCDDelegate gcdDelegate = GCDMethods.FindSteinGCD;
-            Assert.Throws<ArgumentNullException>(() => GCDMethods.FindGCD(gcdDelegate, array));
+            Func<int, int, int> gcdDelegate = FindSteinGCD;
+            Assert.Throws<ArgumentNullException>(() => FindGCD(gcdDelegate, array));
         }
 
         #endregion
