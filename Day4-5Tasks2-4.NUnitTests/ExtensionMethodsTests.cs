@@ -1,6 +1,5 @@
 using System;
 using NUnit.Framework;
-using static NET.S._2018.Haiduk._04_05.GCDMethods;
 
 namespace NET.S._2018.Haiduk._04_05
 {
@@ -8,45 +7,31 @@ namespace NET.S._2018.Haiduk._04_05
     public class ExtensionMethodsNUnitTests
     {
         #region GCD Tests
+
         [TestCase(-55, 11, 110, ExpectedResult = 11)]
         [TestCase(10, 20, 40, 50, 100, ExpectedResult = 10)]
         [TestCase(27, 0, 54, ExpectedResult = 27)]
         [TestCase(150, 450, 900, ExpectedResult = 150)]
-        public int EuclidGCDTest(params int[] array)
-        {
-            Func<int, int, int> gcdDelegate = FindEuclidGCD;
-            return FindGCD(gcdDelegate, array);
-        }
+        public int EuclidGCDTest(params int[] array) => GCDMethods.EuclidGCD(array);
 
         [TestCase(null)]
         [TestCase(new int[0])]
-        public void EuclidGCDTest_AcceptsEmptyArray_ThrowsException(params int[] array)
-        {
-            Func<int, int, int> gcdDelegate = FindEuclidGCD;
-            Assert.Throws<ArgumentNullException>(() => FindGCD(gcdDelegate, array));
-        }
+        public void EuclidGCDTest_AcceptsEmptyArray_ThrowsException(params int[] array) => Assert.Throws<ArgumentNullException>(() => GCDMethods.EuclidGCD(array));
 
         [TestCase(-55, 11, 110, ExpectedResult = 11)]
         [TestCase(10, 20, 40, 50, 100, ExpectedResult = 10)]
         [TestCase(0, 27, 81, ExpectedResult = 27)]
         [TestCase(150, 450, 900, ExpectedResult = 150)]
-        public int SteinGCDTest(params int[] array)
-        {
-            Func<int, int, int> gcdDelegate = FindSteinGCD;
-            return FindGCD(gcdDelegate, array);
-        }
+        public int SteinGCDTest(params int[] array) => GCDMethods.SteinGCD(array);
 
         [TestCase(null)]
         [TestCase(new int[0])]
-        public void SteinGCDTest_AcceptsEmptyArray_ThrowsException(params int[] array)
-        {
-            Func<int, int, int> gcdDelegate = FindSteinGCD;
-            Assert.Throws<ArgumentNullException>(() => FindGCD(gcdDelegate, array));
-        }
+        public void SteinGCDTest_AcceptsEmptyArray_ThrowsException(params int[] array) => Assert.Throws<ArgumentNullException>(() => GCDMethods.SteinGCD(array));
 
         #endregion
 
         #region Binary Converter Tests
+
         [TestCase(-255.255, ExpectedResult = "1100000001101111111010000010100011110101110000101000111101011100")]
         [TestCase(255.255, ExpectedResult = "0100000001101111111010000010100011110101110000101000111101011100")]
         [TestCase(4294967295.0, ExpectedResult = "0100000111101111111111111111111111111111111000000000000000000000")]
@@ -59,9 +44,11 @@ namespace NET.S._2018.Haiduk._04_05
         [TestCase(-0.0, ExpectedResult = "1000000000000000000000000000000000000000000000000000000000000000")]
         [TestCase(0.0, ExpectedResult = "0000000000000000000000000000000000000000000000000000000000000000")]
         public string DoubleToBinaryStringTest(double number) => NumberRepresentationConverter.DoubleToBinaryString(number);
+
         #endregion
 
         #region Decimal Converter Tests
+
         [TestCase("1AeF101", 16, ExpectedResult = 28242177)]
         [TestCase("1ACB67", 16, ExpectedResult = 1756007)]
         [TestCase("01101111011001100001010111111", 2, ExpectedResult = 233620159)]
@@ -80,6 +67,7 @@ namespace NET.S._2018.Haiduk._04_05
             Notation notation = new Notation(basis);
             Assert.Throws<ArgumentNullException>(() => StringExtension.ToDecimalConverter(number, notation));
         }
+
         #endregion
     }
 }
